@@ -1,78 +1,149 @@
-# vue-admin-template
-
-English | [简体中文](./README-zh.md)
-
-> A minimal vue admin template with Element UI & axios & iconfont & permission control & lint
-
-**Live demo:** http://panjiachen.github.io/vue-admin-template
 
 
-**The current version is `v4.0+` build on `vue-cli`. If you want to use the old version , you can switch branch to [tag/3.11.0](https://github.com/PanJiaChen/vue-admin-template/tree/tag/3.11.0), it does not rely on `vue-cli`**
+# easy-vue-admin-template
 
-## Build Setup
+> 使用 vue-admin-template 的模板基础上，做了一些修改。
 
+- 添加修改npm仓库默认源，避免cnpm,node-sass安装过程中的bug
+- 添加更多友好的注释说明（以及翻译了部分原英文注释）
+- 注释了mock数据的代码
+
+
+
+## 开始使用
+
+### 确保你已经安装nodeJS
+
+建议下载LTS(长期支持版)的nodeJS
+
+[nodeJS官方下载地址](https://nodejs.org/zh-cn/)
+
+使用`node --version`命令，查看是否安装成功。
+
+显示版本号则表示安装成功
+
+
+### 确保你已经安装VueCli脚手架（请先安装nodeJS）
+
+[VueCli官方文档](https://cli.vuejs.org/zh/guide/installation.html)
+
+可以使用 `npm i @vue/cli -g --registry=https://registry.npm.taobao.org` 命令全局安装
+
+使用`vue --version`命令，查看是否安装成功。
+
+显示`3.x.x`则表示安装成功
 
 ```bash
-# clone the project
-git clone https://github.com/PanJiaChen/vue-admin-template.git
+# 克隆项目
+git clone https://github.com/zhangpeng2k/easy-vue-admin-template.git
 
-# enter the project directory
-cd vue-admin-template
+# 进入项目目录
+cd easy-vue-admin-template
 
-# install dependency
+# 安装依赖
 npm install
 
-# develop
+# 启动服务
 npm run dev
 ```
 
-This will automatically open http://localhost:9528
+## 项目结构说明
 
-## Build
+[项目结构说明](https://panjiachen.github.io/vue-element-admin-site/zh/guide/#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84)
 
-```bash
-# build for test environment
-npm run build:stage
+## 将这个模板项目变成你的项目
 
-# build for production environment
-npm run build:prod
-```
 
-## Advanced
 
-```bash
-# preview the release environment effect
-npm run preview
 
-# preview the release environment effect + static resource analysis
-npm run preview -- --report
 
-# code format check
-npm run lint
 
-# code format check and auto fix
-npm run lint -- --fix
-```
+以下是vue-admin-template仓库作者的说明
 
-Refer to [Documentation](https://panjiachen.github.io/vue-element-admin-site/guide/essentials/deploy.html) for more information
+---
 
-## Demo
+# vue-admin-template
 
-![demo](https://github.com/PanJiaChen/PanJiaChen.github.io/blob/master/images/demo.gif)
+> 这是一个极简的 vue admin 管理后台。它只包含了 Element UI & axios & iconfont & permission control & lint，这些搭建后台必要的东西。
+
+[线上地址](http://panjiachen.github.io/vue-admin-template)
+
+[国内访问](https://panjiachen.gitee.io/vue-admin-template)
+
+目前版本为 `v4.0+` 基于 `vue-cli` 进行构建，若你想使用旧版本，可以切换分支到[tag/3.11.0](https://github.com/PanJiaChen/vue-admin-template/tree/tag/3.11.0)，它不依赖 `vue-cli`。
 
 ## Extra
 
-If you want router permission && generate menu by user roles , you can use this branch [permission-control](https://github.com/PanJiaChen/vue-admin-template/tree/permission-control)
+如果你想要根据用户角色来动态生成侧边栏和 router，你可以使用该分支[permission-control](https://github.com/PanJiaChen/vue-admin-template/tree/permission-control)
 
-For `typescript` version, you can use [vue-typescript-admin-template](https://github.com/Armour/vue-typescript-admin-template) (Credits: [@Armour](https://github.com/Armour))
-
-## Related Project
+## 相关项目
 
 [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
 
 [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
 
 [vue-typescript-admin-template](https://github.com/Armour/vue-typescript-admin-template)
+
+写了一个系列的教程配套文章，如何从零构建后一个完整的后台项目:
+
+- [手摸手，带你用 vue 撸后台 系列一(基础篇)](https://juejin.im/post/59097cd7a22b9d0065fb61d2)
+- [手摸手，带你用 vue 撸后台 系列二(登录权限篇)](https://juejin.im/post/591aa14f570c35006961acac)
+- [手摸手，带你用 vue 撸后台 系列三 (实战篇)](https://juejin.im/post/593121aa0ce4630057f70d35)
+- [手摸手，带你用 vue 撸后台 系列四(vueAdmin 一个极简的后台基础模板,专门针对本项目的文章,算作是一篇文档)](https://juejin.im/post/595b4d776fb9a06bbe7dba56)
+- [手摸手，带你封装一个 vue component](https://segmentfault.com/a/1190000009090836)
+
+## Build Setup
+
+```bash
+# 克隆项目
+git clone https://github.com/PanJiaChen/vue-admin-template.git
+
+# 进入项目目录
+cd vue-admin-template
+
+# 安装依赖
+npm install
+
+# 建议不要直接使用 cnpm 安装以来，会有各种诡异的 bug。可以通过如下操作解决 npm 下载速度慢的问题
+npm install --registry=https://registry.npm.taobao.org
+
+# 启动服务
+npm run dev
+```
+
+浏览器访问 [http://localhost:9528](http://localhost:9528)
+
+## 发布
+
+```bash
+# 构建测试环境
+npm run build:stage
+
+# 构建生产环境
+npm run build:prod
+```
+
+## 其它
+
+```bash
+# 预览发布环境效果
+npm run preview
+
+# 预览发布环境效果 + 静态资源分析
+npm run preview -- --report
+
+# 代码格式检查
+npm run lint
+
+# 代码格式检查并自动修复
+npm run lint -- --fix
+```
+
+更多信息请参考 [使用文档](https://panjiachen.github.io/vue-element-admin-site/zh/)
+
+## Demo
+
+![demo](https://github.com/PanJiaChen/PanJiaChen.github.io/blob/master/images/demo.gif)
 
 ## Browsers support
 

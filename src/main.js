@@ -1,34 +1,25 @@
 import Vue from 'vue'
 
-import 'normalize.css/normalize.css' // A modern alternative to CSS resets
+import 'normalize.css/normalize.css' // A modern alternative to CSS resets （CSS reset）
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import locale from 'element-ui/lib/locale/lang/en' // lang i18n
+// import locale from 'element-ui/lib/locale/lang/en' // lang i18n 
+import locale from 'element-ui/lib/locale/lang/zh-CN' // element默认使用中文
 
-import '@/styles/index.scss' // global css
+
+import '@/styles/index.scss' // global css (全局css)
 
 import App from './App'
 import store from './store'
 import router from './router'
 
-import '@/icons' // icon
-import '@/permission' // permission control
+import '@/icons' // icon （图标）
+import '@/permission' // permission control （权限控制）
 
-/**
- * If you don't want to use mock-server
- * you want to use MockJs for mock api
- * you can execute: mockXHR()
- *
- * Currently MockJs will be used in the production environment,
- * please remove it before going online! ! !
- */
-import { mockXHR } from '../mock'
-if (process.env.NODE_ENV === 'production') {
-  mockXHR()
-}
 
-// set ElementUI lang to EN
+
+// set ElementUI lang
 Vue.use(ElementUI, { locale })
 
 Vue.config.productionTip = false

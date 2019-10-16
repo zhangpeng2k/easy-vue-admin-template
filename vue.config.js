@@ -36,8 +36,9 @@ module.exports = {
       warnings: false,
       errors: true
     },
+    // 开发环境mock数据，根据实际情况使用，相关说明：https://panjiachen.github.io/vue-element-admin-site/zh/guide/essentials/mock-api.html#swagger
     proxy: {
-      // change xxx-api/login => mock/login
+      // change xxx-api/login => mock/login （将接口xxx-api/login转发到mock/login）
       // detail: https://cli.vuejs.org/config/#devserver-proxy
       [process.env.VUE_APP_BASE_API]: {
         target: `http://127.0.0.1:${port}/mock`,

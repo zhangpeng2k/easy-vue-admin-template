@@ -1,6 +1,7 @@
+// 部分项目设置
 module.exports = {
 
-  title: 'Vue Admin Template',
+  title: 'Easy Vue Admin Template', // 项目title，会显示在浏览器标签卡的标题
 
   /**
    * @type {boolean} true | false
