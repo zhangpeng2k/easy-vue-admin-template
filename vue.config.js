@@ -34,6 +34,7 @@ module.exports = {
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
   devServer: {
+    // 支持所有webpack-dev-server的选项 https://webpack.docschina.org/configuration/dev-server/#devserver
     port: port,
     open: true,
     overlay: {
@@ -44,6 +45,22 @@ module.exports = {
     proxy: {
       // change xxx-api/login => mock/login （将接口xxx-api/login转发到mock/login）
       // detail: https://cli.vuejs.org/config/#devserver-proxy
+
+      // 配置项例子：
+      // target: 'http://www.example.org', // target host
+      // changeOrigin: true, // needed for virtual hosted sites
+      // ws: true, // proxy websockets
+      // pathRewrite: {
+      //   '^/api/old-path': '/api/new-path', // rewrite path
+      //   '^/api/remove/path': '/path' // remove base path
+      // },
+      // router: {
+      //   // when request.headers.host == 'dev.localhost:3000',
+      //   // override target 'http://www.example.org' to 'http://localhost:8000'
+      //   'dev.localhost:3000': 'http://localhost:8000'
+      // }
+      // 中间件文档配置选项： https://github.com/chimurai/http-proxy-middleware#options
+
       [process.env.VUE_APP_BASE_API]: {
         target: `http://127.0.0.1:${port}/mock`,
         changeOrigin: true,
@@ -52,6 +69,7 @@ module.exports = {
         }
       }
     },
+    // 在服务内部的所有其他中间件之后， 提供执行自定义中间件的功能
     after: require('./mock/mock-server.js')
   },
   configureWebpack: {
