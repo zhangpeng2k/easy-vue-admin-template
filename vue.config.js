@@ -13,7 +13,7 @@ const name = defaultSettings.title || 'vue Admin Template' // page title
 // For example, Mac: sudo npm run
 // You can change the port by the following methods:
 // port = 9528 npm run dev OR npm run dev --port = 9528
-const port = process.env.port || process.env.npm_config_port || 9528 // dev port
+const port = process.env.port || process.env.npm_config_port || 9528 // dev port （你的开发环境项目运行端口）
 
 // All configuration item explanations can be find in https://cli.vuejs.org/config/
 module.exports = {
@@ -22,6 +22,10 @@ module.exports = {
    * for example GitHub Pages. If you plan to deploy your site to https://foo.github.io/bar/,
    * then publicPath should be set to "/bar/".
    * In most cases please use '/' !!!
+   * 如果计划在子路径下部署站点，则需要设置publicpath，
+   * 例如github页面。如果您计划将站点部署到https://foo.github.io/bar/，
+   * 那么publicpath应该设置为“/bar/”。
+   * 在大多数情况下，请使用“/”！！！
    * Detail: https://cli.vuejs.org/config/#publicpath
    */
   publicPath: '/',
@@ -53,6 +57,7 @@ module.exports = {
   configureWebpack: {
     // provide the app's title in webpack's name field, so that
     // it can be accessed in index.html to inject the correct title.
+    // 大概意思是: 请用webpack的name属性配置 index.html的title （在这个项目中，推荐你到/src/setting.js 中设置）
     name: name,
     resolve: {
       alias: {

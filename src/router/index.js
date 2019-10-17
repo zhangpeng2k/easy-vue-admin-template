@@ -6,7 +6,7 @@ Vue.use(Router)
 /* Layout */
 import Layout from '@/layout'
 
-/* 项目提供的路由配置 */
+/* 项目提供的路由配置 官方文档 https://panjiachen.github.io/vue-element-admin-site/zh/guide/essentials/router-and-nav.html#配置项 */
 /*
 
 //当设置 true 的时候该路由不会再侧边栏出现 如401，login等页面，或者如一些编辑页面/edit/1
@@ -32,9 +32,7 @@ meta: {
 */
 
 /**
- * constantRoutes
- * a base page that does not have permission requirements
- * all roles can be accessed
+ * 如果你没有设置 roles 属性 则所有角色都可以访问 
  */
 export const constantRoutes = [
   {
@@ -57,7 +55,10 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: {
+        title: '首页',
+        icon: 'dashboard',
+      }
     }]
   },
 
@@ -66,7 +67,7 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/example/table',
     name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    meta: { title: '例子', icon: 'example' },
     children: [
       {
         path: 'table',
@@ -78,7 +79,7 @@ export const constantRoutes = [
         path: 'tree',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        meta: { title: '树形组件', icon: 'tree' }
       }
     ]
   },
@@ -91,7 +92,7 @@ export const constantRoutes = [
         path: 'index',
         name: 'Form',
         component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
+        meta: { title: '表单', icon: 'form' }
       }
     ]
   },
@@ -102,7 +103,7 @@ export const constantRoutes = [
     redirect: '/nested/menu1',
     name: 'Nested',
     meta: {
-      title: 'Nested',
+      title: '嵌套',
       icon: 'nested'
     },
     children: [
