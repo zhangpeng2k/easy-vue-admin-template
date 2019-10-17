@@ -31,22 +31,18 @@ meta: {
 }
 */
 
-/**
- * 如果你没有设置 roles 属性 则所有角色都可以访问 
- */
+// 如果你没有设置 roles 属性，则所有角色都可以访问
 export const constantRoutes = [
   {
     path: '/login',
     component: () => import('@/views/login/index'),
     hidden: true
   },
-
   {
     path: '/404',
     component: () => import('@/views/404'),
     hidden: true
   },
-
   {
     path: '/',
     component: Layout,
@@ -57,11 +53,10 @@ export const constantRoutes = [
       component: () => import('@/views/dashboard/index'),
       meta: {
         title: '首页',
-        icon: 'dashboard',
+        icon: 'dashboard'
       }
     }]
   },
-
   {
     path: '/example',
     component: Layout,
@@ -83,7 +78,6 @@ export const constantRoutes = [
       }
     ]
   },
-
   {
     path: '/form',
     component: Layout,
@@ -164,9 +158,34 @@ export const constantRoutes = [
         meta: { title: 'External Link', icon: 'link' }
       }
     ]
-  },
+  }
 
-  // 404 page must be placed at the end !!!
+]
+
+export const asyncRoutes = [
+  {
+    path: '/roles',
+    component: Layout,
+    children: [
+      {
+        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
+        meta: {
+          title: '权限admin或editor',
+          icon: 'link',
+          roles: ['admin', 'editor']
+        }
+      },
+      {
+        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
+        meta: {
+          title: '权限仅限admin',
+          icon: 'link',
+          roles: ['admin']
+        }
+      }
+    ]
+  },
+  // 404 page must be placed at the end !!! (404路由必须在最后一个，否则将导致在其之后的路由无法正常加载！)
   { path: '*', redirect: '/404', hidden: true }
 ]
 

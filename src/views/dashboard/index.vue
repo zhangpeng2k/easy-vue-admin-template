@@ -1,6 +1,7 @@
 <template>
   <div class="dashboard-container">
     <div class="dashboard-text">name: {{ name }}</div>
+    <el-alert>{{ `当前权限:${roles}` }}</el-alert>
   </div>
 </template>
 
@@ -11,7 +12,8 @@ export default {
   name: 'Dashboard',
   computed: {
     ...mapGetters([
-      'name'
+      'name',
+      'roles'
     ])
   }
 }
