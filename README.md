@@ -2,7 +2,7 @@
 
 # easy-vue-admin-template
 
-> 使用 vue-admin-template 的模板基础上，做了一些修改。让后台开发人员更少配置的上手开发vue-element-admin项目
+> 使用 vue-admin-template 的模板基础上，做了一些功能的删减和整合。让后台开发人员更少配置的上手开发vue-element-admin项目
 
 - 添加修改npm仓库默认源，避免cnpm,node-sass安装过程中的bug
 - 添加更多友好的注释说明（以及翻译了部分原英文注释）
