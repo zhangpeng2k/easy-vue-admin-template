@@ -18,7 +18,7 @@
 
 建议下载LTS(长期支持版)的nodeJS
 
-[nodeJS官方下载地址](https://nodejs.org/zh-cn/)\
+[nodeJS官方下载地址](https://nodejs.org/zh-cn/)
 
 ```bash
 # 查看是否安装成功
