@@ -36,7 +36,8 @@ npm i @vue/cli -g --registry=https://registry.npm.taobao.org
 # 查看是否安装成功
 vue --version
 
-# 显示 3.x.x 版本号则表示安装成功
+# 显示版本号则表示安装成功
+3.x.x
 
 # 克隆项目
 git clone https://github.com/zhangpeng2k/easy-vue-admin-template.git
