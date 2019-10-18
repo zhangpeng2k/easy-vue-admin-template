@@ -8,7 +8,7 @@
 - 添加更多友好的注释说明（以及翻译了部分原英文注释）
 - 删除了用于线上演示mock数据的代码
 - 移除了i18n部分，逻辑代码与提示消息本地化翻译
-- 添加了md5,sha256加密工具函数
+- 添加了md5，sha256加密工具函数
 - 参考主项目[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)添加了基于角色的前端路由控制
 
 
