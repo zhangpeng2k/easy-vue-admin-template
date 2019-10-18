@@ -18,12 +18,15 @@
 
 建议下载LTS(长期支持版)的nodeJS
 
-[nodeJS官方下载地址](https://nodejs.org/zh-cn/)
+[nodeJS官方下载地址](https://nodejs.org/zh-cn/)\
 
-使用`node --version`命令，查看是否安装成功。
+```bash
+# 查看是否安装成功
+node --version
 
-显示版本号则表示安装成功
-
+# 显示版本号则表示安装成功
+x.x.x
+```
 
 ### 确保你已经安装VueCli脚手架（请先安装nodeJS）
 
