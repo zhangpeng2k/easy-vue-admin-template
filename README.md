@@ -6,10 +6,10 @@
 
 - 添加修改npm仓库默认源，避免cnpm,node-sass安装过程中的bug
 - 添加更多友好的注释说明（以及翻译了部分原英文注释）
-- 注释了线上mock数据的代码
-- 移除了i18n部分，部分逻辑代码本地化
+- 删除了用于线上演示mock数据的代码
+- 移除了i18n部分，逻辑代码与提示消息本地化翻译
 - 添加了md5,sha256加密工具函数
-- 
+- 参考主项目[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)添加了基于角色的前端路由控制
 
 
 ## 开始使用
@@ -29,13 +29,15 @@
 
 [VueCli官方文档](https://cli.vuejs.org/zh/guide/installation.html)
 
-可以使用 `npm i @vue/cli -g --registry=https://registry.npm.taobao.org` 命令全局安装
-
-使用`vue --version`命令，查看是否安装成功。
-
-显示`3.x.x`则表示安装成功
-
 ```bash
+# 全局安装VueCli
+npm i @vue/cli -g --registry=https://registry.npm.taobao.org
+
+# 查看是否安装成功
+vue --version
+
+# 显示 3.x.x 版本号则表示安装成功
+
 # 克隆项目
 git clone https://github.com/zhangpeng2k/easy-vue-admin-template.git
 
@@ -47,20 +49,16 @@ npm install
 
 # 启动服务
 npm run dev
+
+# 服务默认会启动在9528端口
 ```
 
 ## 项目结构说明
 
 [项目结构说明](https://panjiachen.github.io/vue-element-admin-site/zh/guide/#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84)
 
-## 将这个模板项目变成你的项目
 
-1. 修改模块
-
-
-
-
-以下是vue-admin-template仓库作者的说明
+# 以下是vue-admin-template仓库作者的说明
 
 ---
 
