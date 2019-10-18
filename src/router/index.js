@@ -158,7 +158,9 @@ export const constantRoutes = [
         meta: { title: 'External Link', icon: 'link' }
       }
     ]
-  }
+  },
+  // 404 page must be placed at the end !!! (404路由必须在最后一个，否则将导致在其之后的路由无法正常加载！)
+  { path: '*', redirect: '/404', hidden: true }
 
 ]
 
@@ -166,9 +168,15 @@ export const asyncRoutes = [
   {
     path: '/roles',
     component: Layout,
+    meta: {
+      title: '权限测试',
+      icon: 'link',
+      roles: ['admin', 'editor']
+    },
     children: [
       {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
+        path: 'menu1',
+        component: () => import('@/views/nested/menu1/index'),
         meta: {
           title: '权限admin或editor',
           icon: 'link',
@@ -176,7 +184,8 @@ export const asyncRoutes = [
         }
       },
       {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
+        path: 'menu2',
+        component: () => import('@/views/nested/menu2/index'),
         meta: {
           title: '权限仅限admin',
           icon: 'link',
@@ -184,9 +193,7 @@ export const asyncRoutes = [
         }
       }
     ]
-  },
-  // 404 page must be placed at the end !!! (404路由必须在最后一个，否则将导致在其之后的路由无法正常加载！)
-  { path: '*', redirect: '/404', hidden: true }
+  }
 ]
 
 const createRouter = () => new Router({
