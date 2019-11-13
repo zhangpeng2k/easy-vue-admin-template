@@ -29,7 +29,7 @@ router.beforeEach(async(to, from, next) => {
       // determine whether the user has obtained his permission roles through getInfo
       // 确定用户是否已通过getinfo获得其权限角色
       const hasRoles = store.getters.roles && store.getters.roles.length > 0
-
+      // 如果你不需要角色路由功能，可以在 @/store/modules/user.js 中将返回的rules写死为['admin']
       if (hasRoles) {
         next()
       } else {
